@@ -1,13 +1,22 @@
 #include <stdio.h>
 
+// Unidades de comprimento (metro, centímetro, milímetro)
 void converterComprimento();
+// Unidades de massa (quilograma, grama, tonelada)
 void converterMassa();
+// Unidades de volume (litro, mililitro, metros cúbicos)
 void converterVolume();
+// Unidades de temperatura (Celsius, Fahrenheit, Kelvin)
 void converterTemperatura();
+// Unidades de velocidade (km/h, m/s, mph)
 void converterVelocidade();
+// Watts (W), quilowatts (kW), cavalos-vapor (cv ou hp)
 void converterPotencia();
+// Unidades de área (metro quadrado, centímetro quadrado)
 void converterArea();
+// Unidades de tempo (segundos, minutos, horas)
 void converterTempo();
+// Bits, bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB)
 void converterDados();
 
 int main() {
