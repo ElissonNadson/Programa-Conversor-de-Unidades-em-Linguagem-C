@@ -1,5 +1,14 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include "conversao_area.c"
+#include "conversao_comprimento.c"
+#include "conversao_dados.c"
+#include "conversao_massa.c"
+#include "conversao_potencia.c"
+#include "conversao_temperatura.c"
+#include "conversao_tempo.c"
+#include "conversao_velocidade.c"
+#include "conversao_volume.c"
 // Unidades de comprimento (metro, centimetro, milimetro)
 void converterComprimento();
 // Unidades de massa (quilograma, grama, tonelada)
