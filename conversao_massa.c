@@ -43,13 +43,13 @@ void converterMassa() {
     //converte a unidade de origem para kg
     double valorEmKg;
     switch (unidadeOrigem) {
-        case 1:
+        case 1: // kg
             valorEmKg = valor;
             break;
-        case 2:
+        case 2: // g
             valorEmKg = valor / 1000.0;
             break;
-        case 3:
+        case 3: // t
             valorEmKg = valor * 1000.0;
             break;
         default:
@@ -81,4 +81,8 @@ void converterMassa() {
     }
 
     printf("Resultado: %.6f %s\n", valorConvertido, unidade);
+
+    printf("Pressione ENTER para voltar ao menu principal...");
+    getchar();
+    getchar();
 }
