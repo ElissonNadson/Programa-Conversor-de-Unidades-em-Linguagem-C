@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "conversao_volume.c"
 
 // Unidades de comprimento (metro, centimetro, milimetro)
 void converterComprimento();
 // Unidades de massa (quilograma, grama, tonelada)
 void converterMassa();
+void converterVolume();
 // Unidades de temperatura (Celsius, Fahrenheit, Kelvin)
 void converterTemperatura();
 // Unidades de velocidade (km/h, m/s, mph)
