@@ -44,9 +44,11 @@ void converterMassa() {
     double valorEmKg;
     switch (unidadeOrigem) {
         case 1: // kg
+        case 1:
             valorEmKg = valor;
             break;
         case 2: // g
+        case 2:
             valorEmKg = valor / 1000.0;
             break;
         case 3: // t
@@ -80,7 +82,8 @@ void converterMassa() {
         default: unidade = "";   break;
     }
 
-    printf("Resultado: %.6f %s\n", valorConvertido, unidade);
+    //ajuste para 2 casas decimais
+    printf("Resultado: %.3f %s\n", valorConvertido, unidade);
 
     printf("Pressione ENTER para voltar ao menu principal...");
     getchar();
