@@ -1,11 +1,10 @@
 #include <stdio.h>
+#include "conversao_volume.c"
 
 // Unidades de comprimento (metro, centimetro, milimetro)
 void converterComprimento();
 // Unidades de massa (quilograma, grama, tonelada)
 void converterMassa();
-// Unidades de volume (litro, mililitro, metros cubicos)
-void converterVolume();
 // Unidades de temperatura (Celsius, Fahrenheit, Kelvin)
 void converterTemperatura();
 // Unidades de velocidade (km/h, m/s, mph)
@@ -38,31 +37,23 @@ int main() {
 
         switch(opcao) {
             case 1:
-                converterComprimento();
                 break;
             case 2:
-                converterMassa();
                 break;
             case 3:
                 converterVolume();
                 break;
             case 4:
-                converterTemperatura();
                 break;
             case 5:
-                converterVelocidade();
                 break;
             case 6:
-                converterPotencia();
                 break;
             case 7:
-                converterArea();
                 break;
             case 8:
-                converterTempo();
                 break;
             case 9:
-                converterDados();
                 break;
             case 0:
                 printf("Saindo...\n");
