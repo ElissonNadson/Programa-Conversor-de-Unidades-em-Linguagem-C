@@ -80,5 +80,10 @@ void converterMassa() {
         default: unidade = "";   break;
     }
 
-    printf("Resultado: %.6f %s\n", valorConvertido, unidade);
+    //ajuste para 3 casas decimais
+    printf("Resultado: %.3f %s\n", valorConvertido, unidade);
+
+    printf("Pressione ENTER para voltar ao menu principal...");
+    getchar();
+    getchar();
 }
