@@ -4,23 +4,7 @@ void converterMassa() {
     double valor;
     int unidadeOrigem, unidadeDestino;
 
-    printf("=== Conversao de Massa ===\n");
-    printf("Unidades disponiveis:\n");
-    printf("1 - kg\n");
-    printf("2 - g\n");
-    printf("3 - t\n");
-    
-    printf("Digite o valor da massa: ");
-    if (scanf("%lf", &valor) != 1) {
-        printf("Entrada invalida. Certifique-se de inserir um numero.\n");
-        return;
-    }
-
-    if (valor < 0) {
-        printf("Valor invalido. A massa nao pode ser negativa.\n");
-        return;
-    }
-
+    //escolher a unidade de origem
     printf("Digite o numero da unidade de origem (1-kg, 2-g, 3-t): ");
     if (scanf("%d", &unidadeOrigem) != 1) {
         printf("Entrada invalida para unidade de origem.\n");
@@ -32,6 +16,19 @@ void converterMassa() {
         return;
     }
 
+    //digitar o valor
+    printf("Digite o valor da massa: ");
+    if (scanf("%lf", &valor) != 1) {
+        printf("Entrada invalida. Certifique-se de inserir um numero.\n");
+        return;
+    }
+
+    if (valor < 0) {
+        printf("Valor invalido. A massa nao pode ser negativa.\n");
+        return;
+    }
+
+    //escolher a unidade de destino
     printf("Digite o numero da unidade de destino (1-kg, 2-g, 3-t): ");
     if (scanf("%d", &unidadeDestino) != 1) {
         printf("Entrada invalida para unidade de destino.\n");
@@ -42,8 +39,9 @@ void converterMassa() {
         printf("Unidade de destino invalida.\n");
         return;
     }
-    double valorEmKg;
 
+    //converte a unidade de origem para kg
+    double valorEmKg;
     switch (unidadeOrigem) {
         case 1:
             valorEmKg = valor;
@@ -55,10 +53,10 @@ void converterMassa() {
             valorEmKg = valor * 1000.0;
             break;
         default:
-            printf("Unidade de origem invalida.\n");
             return;
     }
 
+    //converte de kg para unidade de destino
     double valorConvertido;
     switch (unidadeDestino) {
         case 1:
@@ -71,16 +69,16 @@ void converterMassa() {
             valorConvertido = valorEmKg / 1000.0;
             break;
         default:
-            printf("Unidade de destino invalida.\n");
             return;
     }
-    char *nomeUnidadeDestino;
+
+    char *unidade;
     switch (unidadeDestino) {
-        case 1: nomeUnidadeDestino = "kg"; break;
-        case 2: nomeUnidadeDestino = "g";  break;
-        case 3: nomeUnidadeDestino = "t";  break;
-        default: nomeUnidadeDestino = "";   break;
+        case 1: unidade = "kg"; break;
+        case 2: unidade = "g";  break;
+        case 3: unidade = "t";  break;
+        default: unidade = "";   break;
     }
 
-    printf("Resultado: %.6f %s\n", valorConvertido, nomeUnidadeDestino);
+    printf("Resultado: %.6f %s\n", valorConvertido, unidade);
 }
