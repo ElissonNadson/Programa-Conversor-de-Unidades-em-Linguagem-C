@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> 
 
 // Unidades de comprimento (metro, centimetro, milimetro)
 void converterComprimento();
@@ -22,6 +23,7 @@ void converterDados();
 int main() {
     int opcao;
     do {
+        system("cls"); 
         printf("Escolha uma opcao de conversao:\n");
         printf("1. Comprimento\n");
         printf("2. Massa\n");
