@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 // Unidades de comprimento (metro, centimetro, milimetro)
 void converterComprimento() {
