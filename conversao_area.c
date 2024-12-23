@@ -5,7 +5,7 @@ void converterArea() {
     int unidadeOrigem, unidadeDestino;
 
     //escolher a unidade de origem
-    printf("Digite o numero da unidade de origem (1-metro quadrado, 2-centimetro quadrado): ");
+    printf("Digite o numero da unidade de origem (1-metro quadrado (m2), 2-centimetro quadrado (cm2)): ");
     if (scanf("%d", &unidadeOrigem) != 1) {
         printf("Entrada invalida para unidade de origem.\n");
         return;
@@ -29,7 +29,7 @@ void converterArea() {
     }
 
     //escolher a unidade de destino
-    printf("Digite o numero da unidade de destino (1-metro quadrado, 2-centimetro quadrado): ");
+    printf("Digite o numero da unidade de destino (1-metro quadrado (m2), 2-centimetro quadrado (cm2)): ");
     if (scanf("%d", &unidadeDestino) != 1) {
         printf("Entrada invalida para unidade de destino.\n");
         return;
@@ -68,8 +68,8 @@ void converterArea() {
 
     char *unidade;
     switch (unidadeDestino) {
-        case 1: unidade = "metro quadrado"; break;
-        case 2: unidade = "centimetro quadrado";  break;
+        case 1: unidade = "metro quadrado (m2)"; break;
+        case 2: unidade = "centimetros quadrados (cm2)";  break;
         default: unidade = "";   break;
     }
 
