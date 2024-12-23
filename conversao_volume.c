@@ -6,7 +6,7 @@ double L_para_ml(double L); //Convertendo de litro para minilitro
 double L_para_m3(double ml); //Convertendo de minilitro para litro
 double m3_para_ml(double m3); //Convertendo de metro cúbico para litro
 double m3_para_L(double L); //Convertendo de litro para metro cúbico
-double ml_para_L(double ml); //Convertendo de minilitro para metro cúbico
+double ml_para_L(double ml); //Convertendo de minilitro para metro cubico
 double ml_para_m3(double m3); //Convertendo de metro cúbico para minilitro
 
 // Unidades de volume (L, ml, m3)
