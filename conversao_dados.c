@@ -28,10 +28,10 @@ void converterDados() {
             printf("4. Megabytes (MB)\n");
             printf("5. Gigabytes (GB)\n");
             printf("6. Terabytes (TB)\n");
-            printf("Digite o número correspondente à unidade de origem: ");
+            printf("Digite o numero correspondente a unidade de origem: ");
             scanf("%d", &deUnidade);
             if (deUnidade < 1 || deUnidade > 6){
-                printf("A opção digitada é invalida. Digite novamente:\n");
+                printf("A opcao digitada e invalida. Digite novamente:\n");
             }
         }
         
@@ -46,11 +46,11 @@ void converterDados() {
             printf("4. Megabytes (MB)\n");
             printf("5. Gigabytes (GB)\n");
             printf("6. Terabytes (TB)\n");
-            printf("Digite o número correspondente à unidade de destino: ");
+            printf("Digite o numero correspondente a unidade de destino: ");
             scanf("%d", &paraUnidade);
         
             if (paraUnidade < 1 || paraUnidade > 6){
-                printf("A opção digitada é invalida. Digite novamente:\n");
+                printf("A opcao digitada e invalida. Digite novamente:\n");
             }
         }
         // Convertendo as unidades
