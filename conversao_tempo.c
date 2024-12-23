@@ -45,8 +45,8 @@ void converterTempo() {
                 break;
 
             case 3: // Segundo para Hora e Minuto
-                printf("%.2f Segundo(s) é igual a %.2f Hora(s)\n", valor, valor / 3600);
-                printf("%.2f Segundo(s) é igual a %.2f Minuto(s)\n", valor, valor / 60);
+                printf("%.2f Segundo(s) eh igual a %.2f Hora(s)\n", valor, valor / 3600);
+                printf("%.2f Segundo(s) eh igual a %.2f Minuto(s)\n", valor, valor / 60);
 
                 // Exibindo no formato de relógio
                 horas = (int)(valor / 3600);  // Parte inteira
