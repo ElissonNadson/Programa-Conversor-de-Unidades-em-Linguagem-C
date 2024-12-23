@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-// Unidades de comprimento (metro, centímetro, milímetro)
+// Unidades de comprimento (metro, centimetro, milimetro)
 void converterComprimento();
 // Unidades de massa (quilograma, grama, tonelada)
 void converterMassa();
-// Unidades de volume (litro, mililitro, metros cúbicos)
+// Unidades de volume (litro, mililitro, metros cubicos)
 void converterVolume();
 // Unidades de temperatura (Celsius, Fahrenheit, Kelvin)
 void converterTemperatura();
@@ -12,7 +12,7 @@ void converterTemperatura();
 void converterVelocidade();
 // Watts (W), quilowatts (kW), cavalos-vapor (cv ou hp)
 void converterPotencia();
-// Unidades de área (metro quadrado, centímetro quadrado)
+// Unidades de area (metro quadrado, centimetro quadrado)
 void converterArea();
 // Unidades de tempo (segundos, minutos, horas)
 void converterTempo();
@@ -21,21 +21,19 @@ void converterDados();
 
 int main() {
     int opcao;
-
     do {
-        printf("Programa Conversor de Unidades\n");
-        printf("Escolha uma opção:\n");
-        printf("1. Unidades de comprimento\n");
-        printf("2. Unidades de massa\n");
-        printf("3. Unidades de volume\n");
-        printf("4. Unidades de temperatura\n");
-        printf("5. Unidades de velocidade\n");
-        printf("6. Potência\n");
-        printf("7. Unidades de área\n");
-        printf("8. Unidades de tempo\n");
-        printf("9. Unidades de dados\n");
+        printf("Escolha uma opcao de conversao:\n");
+        printf("1. Comprimento\n");
+        printf("2. Massa\n");
+        printf("3. Volume\n");
+        printf("4. Temperatura\n");
+        printf("5. Velocidade\n");
+        printf("6. Potencia\n");
+        printf("7. Area\n");
+        printf("8. Tempo\n");
+        printf("9. Dados\n");
         printf("0. Sair\n");
-        printf("Opção: ");
+        printf("opcao: ");
         scanf("%d", &opcao);
 
         switch(opcao) {
@@ -70,7 +68,7 @@ int main() {
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opção inválida!\n");
+                printf("Opcao invalida!\n");
         }
     } while(opcao != 0);
 
