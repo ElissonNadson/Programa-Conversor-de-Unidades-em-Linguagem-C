@@ -5,6 +5,7 @@
 void converterComprimento();
 // Unidades de massa (quilograma, grama, tonelada)
 void converterMassa();
+// Unidades de volume (litro, mililitro, metro cubico)
 void converterVolume();
 // Unidades de temperatura (Celsius, Fahrenheit, Kelvin)
 void converterTemperatura();
@@ -23,7 +24,20 @@ int main() {
     int opcao;
     do {
         system("cls"); 
+        printf("*****************************************\n");
+        printf("*                                       *\n");
+        printf("*       Bem-vindo ao nosso conversor!   *\n");
+        printf("*                                       *\n");
+        printf("* Aqui voce vai encontrar diversas      *\n");
+        printf("* opcoes para converter unidades de     *\n");
+        printf("* comprimento, massa, volume,           *\n");
+        printf("* temperatura, velocidade, potencia,    *\n");
+        printf("* area, tempo e dados.                  *\n");
+        printf("*                                       *\n");
+        printf("*****************************************\n\n");
+
         printf("Escolha uma opcao de conversao:\n");
+        printf("-----------------------------------------\n");
         printf("1. Comprimento\n");
         printf("2. Massa\n");
         printf("3. Volume\n");
@@ -34,28 +48,37 @@ int main() {
         printf("8. Tempo\n");
         printf("9. Dados\n");
         printf("0. Sair\n");
+        printf("-----------------------------------------\n");
         printf("opcao: ");
         scanf("%d", &opcao);
 
         switch(opcao) {
             case 1:
+                converterComprimento();
                 break;
             case 2:
+                converterMassa();
                 break;
             case 3:
                 converterVolume();
                 break;
             case 4:
+                converterTemperatura();
                 break;
             case 5:
+                converterVelocidade();
                 break;
             case 6:
+                converterPotencia();
                 break;
             case 7:
+                converterArea();
                 break;
             case 8:
+                converterTempo();
                 break;
             case 9:
+                converterDados();
                 break;
             case 0:
                 printf("Saindo...\n");
