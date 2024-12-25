@@ -10,12 +10,12 @@ void converterComprimento() {
     int opcao;
     do {
         printf("Escolha uma opcao de conversao de unidades de comprimento:\n");
-        printf("1. Metro para Centimetro\n");
-        printf("2. Metro para Milimetro\n");
-        printf("3. Centimetro para Metro\n");
-        printf("4. Centimetro para Milimetro\n");
-        printf("5. Milimetro para Metro\n");
-        printf("6. Milimetro para Centimetro\n");        
+        printf("1. Metro (m) para Centimetro (cm)\n");
+        printf("2. Metro (m) para Milimetro (mm)\n");
+        printf("3. Centimetro (cm) para Metro (m)\n");
+        printf("4. Centimetro (cm) para Milimetro (mm)\n");
+        printf("5. Milimetro (mm) para Metro (m)\n");
+        printf("6. Milimetro (mm) para Centimetro (cm)\n");        
         printf("0. Sair e voltar para o menu principal\n");
         printf("------------------------------------------\n");
         printf("opcao: ");
@@ -31,22 +31,22 @@ void converterComprimento() {
             printf("*****************************************\n");
             switch(opcao) {
                 case 1:
-                    printf("Digite o valor em metros para ser convertido para centimetros: \n");
+                    printf("Digite o valor em metros (m) para ser convertido para centimetros (cm): \n");
                     break;
                 case 2:
-                    printf("Digite o valor em metros para ser convertido para milimetros: \n");
+                    printf("Digite o valor em metros (m) para ser convertido para milimetros (mm): \n");
                     break;
                 case 3:
-                    printf("Digite o valor em centimetros para ser convertido para metros: \n");
+                    printf("Digite o valor em centimetros (cm) para ser convertido para metros (m): \n");
                     break;
                 case 4:
-                    printf("Digite o valor em centimetros para ser convertido para milimetros: \n");
+                    printf("Digite o valor em centimetros (cm) para ser convertido para milimetros (mm): \n");
                     break;
                 case 5:
-                    printf("Digite o valor em milimetros para ser convertido para metros: \n");
+                    printf("Digite o valor em milimetros (mm) para ser convertido para metros (m): \n");
                     break;
                 case 6:
-                    printf("Digite o valor em milimetros para ser convertido para centimetros: \n");
+                    printf("Digite o valor em milimetros (mm) para ser convertido para centimetros (cm): \n");
                     break;
                 default:
                     printf("Opcao invalida!\n");
@@ -64,27 +64,27 @@ void converterComprimento() {
 
         switch(opcao) {            
             case 1:                
-                printf("%.2lf Metros convertido para %.2lf Centimetros\n", valor, valor * 100);
+                printf("%.2lf Metros (m) convertido para %.2lf Centimetros (cm)\n", valor, valor * 100);
                 printf("------------------------------------------\n");
                 break;
             case 2:
-                printf("%.2lf Metros convertido para %.2lf Milimetros\n", valor, valor * 1000);
+                printf("%.2lf Metros (m) convertido para %.2lf Milimetros (mm)\n", valor, valor * 1000);
                 printf("------------------------------------------\n");
                 break;
             case 3:
-                printf("%.2lf Centimetros convertido para %.2lf Metros\n", valor, valor / 100);
+                printf("%.2lf Centimetros (cm) convertido para %.2lf Metros (m)\n", valor, valor / 100);
                 printf("------------------------------------------\n");
                 break;
             case 4:
-                printf("%.2lf Centimetros convertido para %.2lf Milimetros\n", valor, valor * 10);
+                printf("%.2lf Centimetros (cm) convertido para %.2lf Milimetros (mm)\n", valor, valor * 10);
                 printf("------------------------------------------\n");
                 break;
             case 5:
-                printf("%.2lf Milimetros convertido para %.2lf Metros\n", valor, valor / 1000);
+                printf("%.2lf Milimetros (mm) convertido para %.2lf Metros (m)\n", valor, valor / 1000);
                 printf("------------------------------------------\n");
                 break;
             case 6:
-                printf("%.2lf Milimetros convertido para %.2lf Centimetros\n", valor, valor / 10);
+                printf("%.2lf Milimetros (mm) convertido para %.2lf Centimetros (cm)\n", valor, valor / 10);
                 printf("------------------------------------------\n");
                 break;           
             case 0:

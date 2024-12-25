@@ -1,65 +1,90 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void converterTempo() {
+    system("cls");
+    printf("*****************************************\n");
+    printf("Selecionado Conversao de unidades de tempo\n");
+    printf("*****************************************\n");
     int opcao;
-    float valor, resultado;
-
-    while(1) {  // Loop para retornar ao menu após cada conversão
-        printf("\nEscolha a conversão de Tempo:\n");
-        printf("1 - Hora para Minuto e Segundo\n");
-        printf("2 - Minuto para Hora, Segundo\n");
-        printf("3 - Segundo para Hora, Minuto\n");
-        printf("0 - Sair\n");
-        printf("Digite a opção: ");
-        scanf("%d", &opcao);
-
-        if (opcao == 0) {
-            printf("Saindo do programa...\n");
-            break;  // Encerra o programa
+    do {
+        printf("Escolha uma opcao de conversao de unidades de tempo:\n");
+        printf("1. Hora para Minuto e Segundo\n");
+        printf("2. Minuto para Hora e Segundo\n");
+        printf("3. Segundo para Hora e Minuto\n");
+        printf("0. Sair e voltar para o menu principal\n");
+        printf("------------------------------------------\n");
+        printf("opcao: ");
+        if (scanf("%d", &opcao) != 1) {
+            printf("Opcao invalida!\n");
+            printf("------------------------------------------\n");
+            while (getchar() != '\n'); // Limpa o buffer de entrada
+            continue;
+        }
+        
+        float valor;
+        if (opcao != 0){
+            printf("*****************************************\n");
+            switch(opcao) {
+                case 1:
+                    printf("Digite o valor em horas para ser convertido para minutos e segundos: \n");
+                    break;
+                case 2:
+                    printf("Digite o valor em minutos para ser convertido para horas e segundos: \n");
+                    break;
+                case 3:
+                    printf("Digite o valor em segundos para ser convertido para horas e minutos: \n");
+                    break;
+                default:
+                    printf("Opcao invalida!\n");
+                    printf("------------------------------------------\n");
+                    continue;
+            }
+            if (scanf("%f", &valor) != 1) {
+                printf("Entrada invalida. Certifique-se de inserir um numero.\n");
+                printf("------------------------------------------\n");
+                while (getchar() != '\n'); // Limpa o buffer de entrada
+                continue;
+            }
+            printf("*****************************************\n");
         }
 
-        printf("Digite o valor a ser convertido: ");
-        scanf("%f", &valor);
-
-        switch (opcao) {
-            case 1: // Hora para Minuto e Segundo
-                printf("%.2f Hora(s) é igual a %.2f Minuto(s)\n", valor, valor * 60);
-                printf("%.2f Hora(s) é igual a %.2f Segundo(s)\n", valor, valor * 3600);
-
-                // Exibindo no formato de relógio
-                int horas = (int)valor;  // Parte inteira
-                int minutos = (int)((valor - horas) * 60);  // Parte fracionária convertida para minutos
-                int segundos = (int)(((valor - horas) * 60 - minutos) * 60);  // Parte fracionária convertida para segundos
-                printf("Relógio: %02d:%02d:%02d\n", horas, minutos, segundos);
+        switch(opcao) {            
+            case 1:                
+                printf("%.2f Hora(s) convertido para %.2f Minuto(s)\n", valor, valor * 60);
+                printf("%.2f Hora(s) convertido para %.2f Segundo(s)\n", valor, valor * 3600);
+                printf("------------------------------------------\n");
                 break;
-
-            case 2: // Minuto para Hora e Segundo
-                printf("%.2f Minuto(s) é igual a %.2f Hora(s)\n", valor, valor / 60);
-                printf("%.2f Minuto(s) é igual a %.2f Segundo(s)\n", valor, valor * 60);
-
-                // Exibindo no formato de relógio
-                horas = (int)(valor / 60);  // Parte inteira
-                minutos = (int)valor % 60;  // Parte inteira
-                segundos = (int)((valor - (int)valor) * 60);  // Parte fracionária convertida para segundos
-                printf("Relógio: %02d:%02d:%02d\n", horas, minutos, segundos);
+            case 2:
+                printf("%.2f Minuto(s) convertido para %.2f Hora(s)\n", valor, valor / 60);
+                printf("%.2f Minuto(s) convertido para %.2f Segundo(s)\n", valor, valor * 60);
+                printf("------------------------------------------\n");
                 break;
-
-            case 3: // Segundo para Hora e Minuto
-                printf("%.2f Segundo(s) é igual a %.2f Hora(s)\n", valor, valor / 3600);
-                printf("%.2f Segundo(s) é igual a %.2f Minuto(s)\n", valor, valor / 60);
-
-                // Exibindo no formato de relógio
-                horas = (int)(valor / 3600);  // Parte inteira
-                minutos = (int)((valor - horas * 3600) / 60);  // Parte fracionária convertida para minutos
-                segundos = (int)(valor - horas * 3600 - minutos * 60);  // Parte fracionária convertida para segundos
-                printf("Relógio: %02d:%02d:%02d\n", horas, minutos, segundos);
+            case 3:
+                printf("%.2f Segundo(s) convertido para %.2f Hora(s)\n", valor, valor / 3600);
+                printf("%.2f Segundo(s) convertido para %.2f Minuto(s)\n", valor, valor / 60);
+                printf("------------------------------------------\n");
+                break;           
+            case 0:
+                printf("Saindo...\n");
                 break;
-
             default:
-                printf("Opção inválida!\n");
-                break;
+                printf("Opcao invalida!\n\n");
+                printf("------------------------------------------\n");
         }
-    }
-
-    return;
+        if (opcao != 0) {
+            printf("Deseja fazer mais uma conversao de unidades de tempo? \n (1 - Sim, 0 - Nao): ");
+            if (scanf("%d", &opcao) != 1) {
+                printf("Opcao invalida!\n");
+                printf("------------------------------------------\n");
+                while (getchar() != '\n'); // Limpa o buffer de entrada
+                opcao = 0;
+            }
+            if (opcao == 1) {
+                system("cls");
+            } else {
+                opcao = 0;
+            }
+        }
+    } while(opcao != 0);
 }
