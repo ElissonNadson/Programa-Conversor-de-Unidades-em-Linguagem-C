@@ -18,7 +18,11 @@ void converterMassa() {
         printf("0. Sair e voltar para o menu principal\n");
         printf("------------------------------------------\n");
         printf("opcao: ");
-        scanf("%d", &opcao);
+        if (scanf("%d", &opcao) != 1) {
+            printf("Opcao invalida!\n");
+            printf("------------------------------------------\n");
+            while (getchar() != '\n'); 
+        }
         
         double valor;
         if (opcao != 0){
@@ -47,7 +51,12 @@ void converterMassa() {
                     printf("------------------------------------------\n");
                     continue;
             }
-            scanf("%lf", &valor);
+            if (scanf("%lf", &valor) != 1) {
+                printf("Entrada invalida. Certifique-se de inserir um numero.\n");
+                printf("------------------------------------------\n");
+                while (getchar() != '\n'); 
+                continue;
+            }
             printf("*****************************************\n");
         }
 
@@ -92,7 +101,12 @@ void converterMassa() {
         }
         if (opcao != 0) {
             printf("Deseja fazer mais uma conversao de unidades de massa? \n (1 - Sim, 0 - Nao): ");
-            scanf("%d", &opcao);
+            if (scanf("%d", &opcao) != 1) {
+                printf("Opcao invalida!\n");
+                printf("------------------------------------------\n");
+                while (getchar() != '\n'); 
+                opcao = 0;
+            }
             if (opcao == 1) {
                 system("cls");
             } else {
