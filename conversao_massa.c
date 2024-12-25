@@ -1,89 +1,103 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void converterMassa() {
-    double valor;
-    int unidadeOrigem, unidadeDestino;
+    system("cls");
+    printf("*****************************************\n");
+    printf("Selecionado Conversao de unidades de massa\n");
+    printf("*****************************************\n");
+    int opcao;
+    do {
+        printf("Escolha uma opcao de conversao de unidades de massa:\n");
+        printf("1. Quilograma para Grama\n");
+        printf("2. Quilograma para Tonelada\n");
+        printf("3. Grama para Quilograma\n");
+        printf("4. Grama para Tonelada\n");
+        printf("5. Tonelada para Quilograma\n");
+        printf("6. Tonelada para Grama\n");        
+        printf("0. Sair e voltar para o menu principal\n");
+        printf("------------------------------------------\n");
+        printf("opcao: ");
+        scanf("%d", &opcao);
+        
+        double valor;
+        if (opcao != 0){
+            printf("*****************************************\n");
+            switch(opcao) {
+                case 1:
+                    printf("Digite o valor em quilogramas para ser convertido para gramas: \n");
+                    break;
+                case 2:
+                    printf("Digite o valor em quilogramas para ser convertido para toneladas: \n");
+                    break;
+                case 3:
+                    printf("Digite o valor em gramas para ser convertido para quilogramas: \n");
+                    break;
+                case 4:
+                    printf("Digite o valor em gramas para ser convertido para toneladas: \n");
+                    break;
+                case 5:
+                    printf("Digite o valor em toneladas para ser convertido para quilogramas: \n");
+                    break;
+                case 6:
+                    printf("Digite o valor em toneladas para ser convertido para gramas: \n");
+                    break;
+                default:
+                    printf("Opcao invalida!\n");
+                    printf("------------------------------------------\n");
+                    continue;
+            }
+            scanf("%lf", &valor);
+            printf("*****************************************\n");
+        }
 
-    //escolher a unidade de origem
-    printf("Digite o numero da unidade de origem (1-kg, 2-g, 3-t): ");
-    if (scanf("%d", &unidadeOrigem) != 1) {
-        printf("Entrada invalida para unidade de origem.\n");
-        return;
-    }
-
-    if (unidadeOrigem < 1 || unidadeOrigem > 3) {
-        printf("Unidade de origem invalida.\n");
-        return;
-    }
-
-    //digitar o valor
-    printf("Digite o valor da massa: ");
-    if (scanf("%lf", &valor) != 1) {
-        printf("Entrada invalida. Certifique-se de inserir um numero.\n");
-        return;
-    }
-
-    if (valor < 0) {
-        printf("Valor invalido. A massa nao pode ser negativa.\n");
-        return;
-    }
-
-    //escolher a unidade de destino
-    printf("Digite o numero da unidade de destino (1-kg, 2-g, 3-t): ");
-    if (scanf("%d", &unidadeDestino) != 1) {
-        printf("Entrada invalida para unidade de destino.\n");
-        return;
-    }
-
-    if (unidadeDestino < 1 || unidadeDestino > 3) {
-        printf("Unidade de destino invalida.\n");
-        return;
-    }
-
-    //converte a unidade de origem para kg
-    double valorEmKg;
-    switch (unidadeOrigem) {
-        case 1:
-            valorEmKg = valor;
-            break;
-        case 2:
-            valorEmKg = valor / 1000.0;
-            break;
-        case 3: // t
-            valorEmKg = valor * 1000.0;
-            break;
-        default:
-            return;
-    }
-
-    //converte de kg para unidade de destino
-    double valorConvertido;
-    switch (unidadeDestino) {
-        case 1:
-            valorConvertido = valorEmKg;
-            break;
-        case 2:
-            valorConvertido = valorEmKg * 1000.0;
-            break;
-        case 3:
-            valorConvertido = valorEmKg / 1000.0;
-            break;
-        default:
-            return;
-    }
-
-    char *unidade;
-    switch (unidadeDestino) {
-        case 1: unidade = "kg"; break;
-        case 2: unidade = "g";  break;
-        case 3: unidade = "t";  break;
-        default: unidade = "";   break;
-    }
-
-    //ajuste para 3 casas decimais
-    printf("Resultado: %.3f %s\n", valorConvertido, unidade);
-
-    printf("Pressione ENTER para voltar ao menu principal...");
-    getchar();
-    getchar();
+        double valorConvertido;
+        switch(opcao) {            
+            case 1:                
+                valorConvertido = valor * 1000;
+                printf("%.2lf Quilogramas convertido para %.2lf Gramas\n", valor, valorConvertido);
+                printf("------------------------------------------\n");
+                break;
+            case 2:
+                valorConvertido = valor / 1000;
+                printf("%.2lf Quilogramas convertido para %.2lf Toneladas\n", valor, valorConvertido);
+                printf("------------------------------------------\n");
+                break;
+            case 3:
+                valorConvertido = valor / 1000;
+                printf("%.2lf Gramas convertido para %.2lf Quilogramas\n", valor, valorConvertido);
+                printf("------------------------------------------\n");
+                break;
+            case 4:
+                valorConvertido = valor / 1000000;
+                printf("%.2lf Gramas convertido para %.2lf Toneladas\n", valor, valorConvertido);
+                printf("------------------------------------------\n");
+                break;
+            case 5:
+                valorConvertido = valor * 1000;
+                printf("%.2lf Toneladas convertido para %.2lf Quilogramas\n", valor, valorConvertido);
+                printf("------------------------------------------\n");
+                break;
+            case 6:
+                valorConvertido = valor * 1000000;
+                printf("%.2lf Toneladas convertido para %.2lf Gramas\n", valor, valorConvertido);
+                printf("------------------------------------------\n");
+                break;           
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida!\n\n");
+                printf("------------------------------------------\n");
+        }
+        if (opcao != 0) {
+            printf("Deseja fazer mais uma conversao de unidades de massa? \n (1 - Sim, 0 - Nao): ");
+            scanf("%d", &opcao);
+            if (opcao == 1) {
+                system("cls");
+            } else {
+                opcao = 0;
+            }
+        }
+    } while(opcao != 0);
 }
