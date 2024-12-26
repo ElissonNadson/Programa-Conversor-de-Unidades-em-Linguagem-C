@@ -10,103 +10,114 @@ float FahrenheitToKelvin(float Tfahrenheit);
 float KelvinToCelsius(float Tkelvin);
 float KelvinToFahrenheit(float Tkelvin);
 
-
 void converterTemperatura() {
-    int opc, subopc, opcContinuar;
+    system("cls");
+    printf("*****************************************\n");
+    printf("Selecionado Conversao de unidades de temperatura\n");
+    printf("*****************************************\n");
+    int opcao;
     do {
-        float temperatura;
-        system("cls"); 
-        printf("\nBem-vindo ao conversor de unidades de temperatura!\n");
-        printf("Escolha a unidade de medida que voce quer converter:\n");
-        printf("1. Celsius\n");
-        printf("2. Farenheit\n");
-        printf("3. Kelvin\n");
-        printf("4. Voltar\n");
-        printf("Opcao: ");
-        scanf("%d", &opc);
-
-        if (opc < 1 || opc > 4) {
-            printf("Opcao invalida! Por favor, tente novamente.\n");
+        printf("Escolha uma opcao de conversao de unidades de temperatura:\n");
+        printf("1. Celsius (C) para Fahrenheit (F)\n");
+        printf("2. Celsius (C) para Kelvin (K)\n");
+        printf("3. Fahrenheit (F) para Celsius (C)\n");
+        printf("4. Fahrenheit (F) para Kelvin (K)\n");
+        printf("5. Kelvin (K) para Celsius (C)\n");
+        printf("6. Kelvin (K) para Fahrenheit (F)\n");
+        printf("0. Sair e voltar para o menu principal\n");
+        printf("------------------------------------------\n");
+        printf("opcao: ");
+        if (scanf("%d", &opcao) != 1) {
+            printf("Opcao invalida!\n");
+            printf("------------------------------------------\n");
+            while (getchar() != '\n'); // Limpa o buffer de entrada
             continue;
         }
-
-        if (opc != 4) {
-            printf("Digite o valor a ser convertido: ");
-            scanf("%f", &temperatura);
-            printf("Escolha a unidade de destino:\n");
-            switch (opc) {
+        
+        float valor;
+        if (opcao != 0){
+            printf("*****************************************\n");
+            switch(opcao) {
                 case 1:
-                    printf("1. Farenheit\n");
-                    printf("2. Kelvin\n");
-                    printf("Opcao: ");
-                    scanf("%d", &subopc);
-                    switch (subopc) {
-                        case 1:
-                            printf("%.1fTC e igual a %.1fTF\n", temperatura, CelsiusToFahrenheit(temperatura));
-                            break;
-                        case 2:
-                            printf("%.1fTC e igual a %.1fTK\n", temperatura, CelsiusToKelvin(temperatura));
-                            break;
-                        default:
-                            printf("Opcao invalida! Por favor, tente novamente.\n");
-                            break;
-                    }
+                    printf("Digite o valor em Celsius (C) para ser convertido para Fahrenheit (F): \n");
                     break;
                 case 2:
-                    printf("1. Celsius\n");
-                    printf("2. Kelvin\n");
-                    printf("Opcao: ");
-                    scanf("%d", &subopc);
-                    switch (subopc) {
-                        case 1:
-                            printf("%.1fTF e igual a %.1fTC\n", temperatura, FahrenheitToCelsius(temperatura));
-                            break;
-                        case 2:
-                            printf("%.1fTF e igual a %.1fTK\n", temperatura, FahrenheitToKelvin(temperatura));
-                            break;
-                        default:
-                            printf("Opcao invalida! Por favor, tente novamente.\n");
-                            break;
-                    }
+                    printf("Digite o valor em Celsius (C) para ser convertido para Kelvin (K): \n");
                     break;
-
                 case 3:
-                    printf("1. Celsius\n");
-                    printf("2. Farenheit\n");
-                    printf("Opcao: ");
-                    scanf("%d", &subopc);
-                    switch (subopc) {
-                        case 1:
-                            printf("%.1fTK e igual a %.1fTC\n", temperatura, KelvinToCelsius(temperatura));
-                            break;
-                        case 2:
-                            printf("%.1fTK e igual a %.1fTF\n", temperatura, KelvinToFahrenheit(temperatura));
-                            break;
-                        default:
-                            printf("Opcao invalida! Por favor, tente novamente.\n");
-                            break;
-                    }
+                    printf("Digite o valor em Fahrenheit (F) para ser convertido para Celsius (C): \n");
                     break;
+                case 4:
+                    printf("Digite o valor em Fahrenheit (F) para ser convertido para Kelvin (K): \n");
+                    break;
+                case 5:
+                    printf("Digite o valor em Kelvin (K) para ser convertido para Celsius (C): \n");
+                    break;
+                case 6:
+                    printf("Digite o valor em Kelvin (K) para ser convertido para Fahrenheit (F): \n");
+                    break;
+                default:
+                    printf("Opcao invalida!\n");
+                    printf("------------------------------------------\n");
+                    continue;
+            }
+            if (scanf("%f", &valor) != 1) {
+                printf("Entrada invalida. Certifique-se de inserir um numero.\n");
+                printf("------------------------------------------\n");
+                while (getchar() != '\n'); // Limpa o buffer de entrada
+                continue;
+            }
+            printf("*****************************************\n");
+        }
+
+        switch(opcao) {            
+            case 1:                
+                printf("%.2f Celsius (C) convertido para %.2f Fahrenheit (F)\n", valor, CelsiusToFahrenheit(valor));
+                printf("------------------------------------------\n");
+                break;
+            case 2:
+                printf("%.2f Celsius (C) convertido para %.2f Kelvin (K)\n", valor, CelsiusToKelvin(valor));
+                printf("------------------------------------------\n");
+                break;
+            case 3:
+                printf("%.2f Fahrenheit (F) convertido para %.2f Celsius (C)\n", valor, FahrenheitToCelsius(valor));
+                printf("------------------------------------------\n");
+                break;
+            case 4:
+                printf("%.2f Fahrenheit (F) convertido para %.2f Kelvin (K)\n", valor, FahrenheitToKelvin(valor));
+                printf("------------------------------------------\n");
+                break;
+            case 5:
+                printf("%.2f Kelvin (K) convertido para %.2f Celsius (C)\n", valor, KelvinToCelsius(valor));
+                printf("------------------------------------------\n");
+                break;
+            case 6:
+                printf("%.2f Kelvin (K) convertido para %.2f Fahrenheit (F)\n", valor, KelvinToFahrenheit(valor));
+                printf("------------------------------------------\n");
+                break;           
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida!\n\n");
+                printf("------------------------------------------\n");
+        }
+        if (opcao != 0) {
+            printf("Deseja fazer mais uma conversao de unidades de temperatura? \n (1 - Sim, 0 - Nao): ");
+            if (scanf("%d", &opcao) != 1) {
+                printf("Opcao invalida!\n");
+                printf("------------------------------------------\n");
+                while (getchar() != '\n'); // Limpa o buffer de entrada
+                opcao = 0;
+            }
+            if (opcao == 1) {
+                system("cls");
+            } else {
+                opcao = 0;
             }
         }
-
-        if (opc != 4) {
-            do {
-                printf("Deseja converter outro valor? (1-Sim, 2-Voltar ao menu principal): ");
-                scanf("%d", &opcContinuar);
-                if (opcContinuar == 1)
-                    break;
-                else if (opcContinuar == 2)
-                    opc = 4;
-                else
-                    printf("Opcao invalida! Por favor, tente novamente.\n");
-            } while (opcContinuar != 1 && opcContinuar != 2);
-        }
-    } while (opc != 4);
+    } while(opcao != 0);
 }
-
-
-
 
 // Funções auxiliares
 float CelsiusToFahrenheit(float Tcelsius) {

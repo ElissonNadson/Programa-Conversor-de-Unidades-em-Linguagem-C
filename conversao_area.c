@@ -9,15 +9,15 @@ void converterArea() {
     int opcao;
     do {
         printf("Escolha uma opcao de conversao de unidades de area:\n");
-        printf("1. Metro quadrado (m²) para Centimetro quadrado (cm²)\n");
-        printf("2. Centimetro quadrado (cm²) para Metro quadrado (m²)\n");
+        printf("1. Metro quadrado (m-2) para Centimetro quadrado (cm-2)\n");
+        printf("2. Centimetro quadrado (cm-2) para Metro quadrado (m-2)\n");
         printf("0. Sair e voltar para o menu principal\n");
         printf("------------------------------------------\n");
         printf("opcao: ");
         if (scanf("%d", &opcao) != 1) {
             printf("Opcao invalida!\n");
             printf("------------------------------------------\n");
-            while (getchar() != '\n'); // Limpa o buffer de entrada
+            while (getchar() != '\n'); 
             continue;
         }
         
@@ -26,10 +26,10 @@ void converterArea() {
             printf("*****************************************\n");
             switch(opcao) {
                 case 1:
-                    printf("Digite o valor em metros quadrados (m²) para ser convertido para centimetros quadrados (cm²): \n");
+                    printf("Digite o valor em metros quadrados (m-2) para ser convertido para centimetros quadrados (cm-2): \n");
                     break;
                 case 2:
-                    printf("Digite o valor em centimetros quadrados (cm²) para ser convertido para metros quadrados (m²): \n");
+                    printf("Digite o valor em centimetros quadrados (cm-2) para ser convertido para metros quadrados (m-2): \n");
                     break;
                 default:
                     printf("Opcao invalida!\n");
@@ -39,8 +39,7 @@ void converterArea() {
             if (scanf("%lf", &valor) != 1) {
                 printf("Entrada invalida. Certifique-se de inserir um numero.\n");
                 printf("------------------------------------------\n");
-                while (getchar() != '\n'); // Limpa o buffer de entrada
-                continue;
+                while (getchar() != '\n');
             }
             printf("*****************************************\n");
         }
@@ -49,12 +48,12 @@ void converterArea() {
         switch(opcao) {            
             case 1:                
                 valorConvertido = valor * 10000;
-                printf("%.2lf Metros quadrados (m²) convertido para %.2lf Centimetros quadrados (cm²)\n", valor, valorConvertido);
+                printf("%.2lf Metros quadrados (m-2) convertido para %.2lf Centimetros quadrados (cm-2)\n", valor, valorConvertido);
                 printf("------------------------------------------\n");
                 break;
             case 2:
                 valorConvertido = valor / 10000;
-                printf("%.2lf Centimetros quadrados (cm²) convertido para %.2lf Metros quadrados (m²)\n", valor, valorConvertido);
+                printf("%.2lf Centimetros quadrados (cm-2) convertido para %.2lf Metros quadrados (m-2)\n", valor, valorConvertido);
                 printf("------------------------------------------\n");
                 break;           
             case 0:
@@ -69,8 +68,7 @@ void converterArea() {
             if (scanf("%d", &opcao) != 1) {
                 printf("Opcao invalida!\n");
                 printf("------------------------------------------\n");
-                while (getchar() != '\n'); // Limpa o buffer de entrada
-                opcao = 0;
+                while (getchar() != '\n');
             }
             if (opcao == 1) {
                 system("cls");

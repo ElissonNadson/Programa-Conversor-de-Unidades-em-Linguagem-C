@@ -25,15 +25,12 @@ int main() {
     do {
         system("cls"); 
         printf("*****************************************\n");
-        printf("*                                       *\n");
         printf("*       Bem-vindo ao nosso conversor!   *\n");
-        printf("*                                       *\n");
         printf("* Aqui voce vai encontrar diversas      *\n");
         printf("* opcoes para converter unidades de     *\n");
         printf("* comprimento, massa, volume,           *\n");
         printf("* temperatura, velocidade, potencia,    *\n");
         printf("* area, tempo e dados.                  *\n");
-        printf("*                                       *\n");
         printf("*****************************************\n\n");
 
         printf("Escolha uma opcao de conversao:\n");

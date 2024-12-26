@@ -19,11 +19,11 @@ void converterVolume() {
     do {
         printf("Escolha uma opcao de conversao de unidades de volume:\n");
         printf("1. Litro (L) para Mililitro (ml)\n");
-        printf("2. Litro (L) para Metro Cubico (m³)\n");
-        printf("3. Metro Cubico (m³) para Mililitro (ml)\n");
-        printf("4. Metro Cubico (m³) para Litro (L)\n");
+        printf("2. Litro (L) para Metro Cubico (m3)\n");
+        printf("3. Metro Cubico (m3) para Mililitro (ml)\n");
+        printf("4. Metro Cubico (m3) para Litro (L)\n");
         printf("5. Mililitro (ml) para Litro (L)\n");
-        printf("6. Mililitro (ml) para Metro Cubico (m³)\n");        
+        printf("6. Mililitro (ml) para Metro Cubico (m3)\n");        
         printf("0. Sair e voltar para o menu principal\n");
         printf("------------------------------------------\n");
         printf("opcao: ");
@@ -42,19 +42,19 @@ void converterVolume() {
                     printf("Digite o valor em litros (L) para ser convertido para mililitros (ml): \n");
                     break;
                 case 2:
-                    printf("Digite o valor em litros (L) para ser convertido para metros cubicos (m³): \n");
+                    printf("Digite o valor em litros (L) para ser convertido para metros cubicos (m3): \n");
                     break;
                 case 3:
-                    printf("Digite o valor em metros cubicos (m³) para ser convertido para mililitros (ml): \n");
+                    printf("Digite o valor em metros cubicos (m3) para ser convertido para mililitros (ml): \n");
                     break;
                 case 4:
-                    printf("Digite o valor em metros cubicos (m³) para ser convertido para litros (L): \n");
+                    printf("Digite o valor em metros cubicos (m3) para ser convertido para litros (L): \n");
                     break;
                 case 5:
                     printf("Digite o valor em mililitros (ml) para ser convertido para litros (L): \n");
                     break;
                 case 6:
-                    printf("Digite o valor em mililitros (ml) para ser convertido para metros cubicos (m³): \n");
+                    printf("Digite o valor em mililitros (ml) para ser convertido para metros cubicos (m3): \n");
                     break;
                 default:
                     printf("Opcao invalida!\n");
@@ -76,15 +76,15 @@ void converterVolume() {
                 printf("------------------------------------------\n");
                 break;
             case 2:
-                printf("%.2lf Litros (L) convertido para %.2lf Metros Cubicos (m³)\n", valor, L_para_m3(valor));
+                printf("%.2lf Litros (L) convertido para %.2lf Metros Cubicos (m3)\n", valor, L_para_m3(valor));
                 printf("------------------------------------------\n");
                 break;
             case 3:
-                printf("%.2lf Metros Cubicos (m³) convertido para %.2lf Mililitros (ml)\n", valor, m3_para_ml(valor));
+                printf("%.2lf Metros Cubicos (m3) convertido para %.2lf Mililitros (ml)\n", valor, m3_para_ml(valor));
                 printf("------------------------------------------\n");
                 break;
             case 4:
-                printf("%.2lf Metros Cubicos (m³) convertido para %.2lf Litros (L)\n", valor, m3_para_L(valor));
+                printf("%.2lf Metros Cubicos (m3) convertido para %.2lf Litros (L)\n", valor, m3_para_L(valor));
                 printf("------------------------------------------\n");
                 break;
             case 5:
@@ -92,7 +92,7 @@ void converterVolume() {
                 printf("------------------------------------------\n");
                 break;
             case 6:
-                printf("%.2lf Mililitros (ml) convertido para %.2lf Metros Cubicos (m³)\n", valor, ml_para_m3(valor));
+                printf("%.2lf Mililitros (ml) convertido para %.2lf Metros Cubicos (m3)\n", valor, ml_para_m3(valor));
                 printf("------------------------------------------\n");
                 break;           
             case 0:
