@@ -35,3 +35,8 @@ Após a compilação, execute o programa com o seguinte comando:
 - Certifique-se de inserir valores numéricos válidos ao realizar as conversões.
 - Utilize as opções do menu para navegar pelo programa.
 - Em caso de erro, o programa exibirá uma mensagem de "Opção inválida" e permitirá que você tente novamente.
+
+### Links Úteis
+- [Repositório no GitHub](https://github.com/ElissonNadson/Programa_Conversor_de_Unidades_em_Linguagem_C)
+
+- [Quadro no Trello](https://trello.com/invite/b/6761f72b34fabd10543e0fb4/ATTIb81272e3d13328eb4c88422fb18b80aaB32B891D/atividade-em-grupo-1)
